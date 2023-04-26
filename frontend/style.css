@@ -33,14 +33,7 @@ h1{
 }
 
 
-label[for="firstname"],
-label[for="lastname"],
-label[for="age"],
-label[for="gender"],
-label[for="dob"],
-label[for="pob"],
-label[for="phoneNumber"],
-label[for="email"]{
+label{
   font-weight: bold;
   display: block;
   margin: 10px;
