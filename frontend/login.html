@@ -12,12 +12,12 @@
     <div class="container-first">
         <h2>Sign in</h2>
         <div class="container">
-    <form>
+    <form name="login" action="login_backend.php" method="post">
         <label for="username">Username</label>
-        <input type="text" placeholder="Enter username" id="uname" required>
+        <input type="text" placeholder="Enter username" id="uname" name="uname" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Enter password" id="password" required>
+        <input type="password" placeholder="Enter password" id="password" name="password" required>
         <button type="submit">Sign in</button>
     </form>
         </div>
