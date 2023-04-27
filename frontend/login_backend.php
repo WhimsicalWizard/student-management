@@ -2,10 +2,7 @@
 include('dbcon.php');
 $username = $_POST['uname'];  
 $password = $_POST['password'];  
-$host = "localhost";
-$db_name ="bca2077";
-$user= "root";
-$password ="";
+
 
 $stmt = $con->prepare("select *from students where first_name = ?");
 $stmt->bind_param("s", $username);
