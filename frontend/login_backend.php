@@ -4,7 +4,7 @@ $username = $_POST['uname'];
 $password = $_POST['password'];  
 
 
-$stmt = $con->prepare("select *from students where first_name = ?");
+$stmt = $con->prepare("select *from users where first_name = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $stmt_result =$stmt->get_result();
