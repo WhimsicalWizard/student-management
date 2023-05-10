@@ -17,4 +17,5 @@ if(mysqli_query($con,$sql)){
 }
 else echo "There was error inserting the data";
 
+$con->close();
 ?>
