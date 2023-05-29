@@ -1,5 +1,5 @@
 <?php
-include('header.html');
+
 include('dbcon.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -22,7 +22,19 @@ $result = mysqli_query($con, $sql);
 </head>
 
 <body>
-    <!-- creating table -->
+<div class="gif-container">
+  <img src="hood.gif" alt="Goofy GIF" class="gif">
+</div>
+
+<div class="container">
+    <div class="header">
+        <h2>Menu</h2>
+        <?php
+        include('header.html');
+        ?>
+    </div>
+
+
     <div class="top">
     <table>
         <tr class="tabletop">
@@ -48,6 +60,7 @@ $result = mysqli_query($con, $sql);
         }
         ?>
     </table>
+</div>
 </div>
 </body>
 </html>

@@ -1,0 +1,27 @@
+/* header.css */
+
+/* Reset default margin and padding for the <ul> and <li> elements */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    display: block; /* Display list items as blocks */
+  }
+  
+  /* Add spacing and style for the <a> tags */
+  li a {
+    display: block; /* Display links as blocks */
+    padding: 10px; /* Add padding to create spacing */
+    text-decoration: none; /* Remove underline from links */
+    color: #ffffff; /* Set link color */
+  }
+  
+  /* Optional: Add hover effect for the links */
+  li a:hover {
+    background-color: #ffffff; /* Change background color on hover */
+   color: #161b22;
+  }
+  
