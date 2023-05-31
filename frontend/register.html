@@ -8,20 +8,54 @@
     <title>Register</title>
    
     <link rel="stylesheet" href="style.css">
+<script>function validateForm() {
+  var firstname = document.getElementById("firstname").value;
+  var lastname = document.getElementById("lastname").value;
+  var gender = document.getElementById("gender").value;
+  var dob = document.getElementById("dob").value;
+  var address = document.getElementById("address").value;
+  var city = document.getElementById("city").value;
+  var email = document.getElementById("email").value;
+  var usertype = document.querySelector('input[name="usertype"]:checked');
 
+  if (firstname.trim() === '' || lastname.trim() === '' || gender === '' || dob === '' || address.trim() === '' || city.trim() === '' || email.trim() === '' || !usertype) {
+      alert("All fields are required.");
+      return false;
+  }
+  var namePattern = /^[a-zA-Z\s]+$/;
+
+  if (!namePattern.test(firstname)) {
+    alert("Please enter a valid first name.");
+    return false;
+  }
+
+
+  if (!namePattern.test(lastname)) {
+    alert("Please enter a valid last name.");
+    return false;
+  }
+
+  if (!emailIsValid(email)) {
+      alert("Invalid email format.");
+      return false;
+  }
+
+  return true;
+}
+
+function emailIsValid(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+</script>
 </head>
 <body>
-  <?php
-  // Your PHP code goes here
-  $message = "Hello, World!";
-  echo $message;
-  ?>
+ 
  
   <h1>Fill The Form</h1>
   <div class="container-first">
   <div class="container">
 
-     <form name="Register" action="insert.php" method="post">
+     <form name="Register" action="insert.php" method="post" onsubmit="return validateForm()">
         <label for="firstname">First Name:</label>
         <input type="text" id="firstname" name="firstname" required> 
        
