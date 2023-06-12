@@ -1,80 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-   
-    <link rel="stylesheet" href="style.css">
-<script>function validateForm() {
-  var firstname = document.getElementById("firstname").value;
-  var lastname = document.getElementById("lastname").value;
-  var gender = document.getElementById("gender").value;
-  var dob = document.getElementById("dob").value;
-  var address = document.getElementById("address").value;
-  var city = document.getElementById("city").value;
-  var email = document.getElementById("email").value;
-  var usertype = document.querySelector('input[name="usertype"]:checked');
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
 
-  if (firstname.trim() === '' || lastname.trim() === '' || gender === '' || dob === '' || address.trim() === '' || city.trim() === '' || email.trim() === '' || !usertype) {
-      alert("All fields are required.");
-      return false;
-  }
-  var namePattern = /^[a-zA-Z\s]+$/;
+  <link rel="stylesheet" href="style.css">
+  <script>function validateForm() {
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var gender = document.getElementById("gender").value;
+      var dob = document.getElementById("dob").value;
+      var address = document.getElementById("address").value;
+      var city = document.getElementById("city").value;
+      var email = document.getElementById("email").value;
+      var usertype = document.querySelector('input[name="usertype"]:checked');
 
-  if (!namePattern.test(firstname)) {
-    alert("Please enter a valid first name.");
-    return false;
-  }
+      if (firstname.trim() === '' || lastname.trim() === '' || gender === '' || dob === '' || address.trim() === '' || city.trim() === '' || email.trim() === '' || !usertype) {
+        alert("All fields are required.");
+        return false;
+      }
+      var namePattern = /^[a-zA-Z\s]+$/;
+
+      if (!namePattern.test(firstname)) {
+        alert("Please enter a valid first name.");
+        return false;
+      }
 
 
-  if (!namePattern.test(lastname)) {
-    alert("Please enter a valid last name.");
-    return false;
-  }
+      if (!namePattern.test(lastname)) {
+        alert("Please enter a valid last name.");
+        return false;
+      }
 
-  if (!emailIsValid(email)) {
-      alert("Invalid email format.");
-      return false;
-  }
+      if (!emailIsValid(email)) {
+        alert("Invalid email format.");
+        return false;
+      }
 
-  return true;
-}
+      return true;
+    }
 
-function emailIsValid(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-</script>
+    function emailIsValid(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+  </script>
 </head>
+
 <body>
- 
- 
+
+
   <h1>Fill The Form</h1>
   <div class="container-first">
-  <div class="container">
+    <div class="container">
 
-     <form name="Register" action="insert.php" method="post" onsubmit="return validateForm()">
+      <form name="Register" action="insert.php" method="post" onsubmit="return validateForm()">
         <label for="firstname">First Name:</label>
-        <input type="text" id="firstname" name="firstname" required> 
-       
+        <input type="text" id="firstname" name="firstname" required>
+
         <label for="lastname">Last Name:</label>
         <input type="text" id="lastname" name="lastname" required>
-        
-      
-        
+
+
+
         <label for="gender">Gender:</label>
         <select id="gender" name="gender" required>
           <option value="male">Male</option>
           <option value="female">Female</option>
-          
+
         </select>
-        
-        
+
+
         <label for="dob">Date of Birth:</label>
         <input type="date" id="dob" name="dob" required>
-        
+
         <label for="pob">Place of Birth:</label>
         <select id="pob" name="pob">
           <option value="nepal">Nepal</option>
@@ -89,24 +90,25 @@ function emailIsValid(email) {
         <input type="text" id="city" name="city" required>
 
         <label for="phoneNumber">Ph Num</label>
-        <input type="number" id ="phone" name="phone">
-        
+        <input type="number" id="phone" name="phone">
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
-        
+
         <label for="user">Select Usertype</label>
         <div class="age">
-        <label for="students">Student</label> 
-        <input type="radio" id="students" name="usertype" value="students" required>
-       
-        <label for="teacher">Teacher</label>
-        <input type="radio" id="teacher" name="usertype" value="teacher">
-      </div>
-        
+          <label for="students">Student</label>
+          <input type="radio" id="students" name="usertype" value="students" required>
+
+          <label for="teacher">Teacher</label>
+          <input type="radio" id="teacher" name="usertype" value="teacher">
+        </div>
+
         <input type="submit" value="Submit">
-    
+
       </form>
     </div>
   </div>
 </body>
+
 </html>

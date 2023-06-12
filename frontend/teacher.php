@@ -40,6 +40,8 @@ $result = mysqli_query($con, $sql);
             <td>Name</td>
             <td>Age</td>
             <td>Email</td>
+            <td>Phone</td>
+
             <td>Update</td>
         </tr>
 
